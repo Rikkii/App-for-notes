@@ -29,6 +29,7 @@ public class BlogController {
     public String blogAdd(Model model) {
         return "blog-add";
     }
+
     @PostMapping("/blog/add")
     public String blogPostAdd(@RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model) {
         Post post = new Post(title, anons, full_text);
@@ -74,5 +75,4 @@ public class BlogController {
         postRepository.delete(post);
         return "redirect:/blog";
     }
-
 }
